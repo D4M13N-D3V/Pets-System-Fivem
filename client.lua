@@ -13,13 +13,14 @@ local petHealth = 25
 
 local uiToggle = true
 
-local petInventoryInformation={
-    ["Rottwieler"]=89,  
-    ["Husky"]=90,  
-    ["German Shepard"]=91,  
-    ["Golden Retriever"]=92,   
-    ["Cat"]=93,
-}
+--PUT YOUR CORRESPONDING ITEM IDS TO ANIMALS HERE!
+--local petInventoryInformation={
+--    ["Rottwieler"]=89,  
+--    ["Husky"]=90,  
+--    ["German Shepard"]=91,  
+--    ["Golden Retriever"]=92,   
+--    ["Cat"]=93,
+--}
 
 RegisterNetEvent("togglePetUI")
 AddEventHandler("togglePetUI", function()
@@ -109,7 +110,7 @@ function getPetOut()
                     petHunger=petMaxHunger
                     petThirst=petMaxThirst
                     petHealth=petMaxHealth
-                    TriggerServerEvent("inventory:remove",petInventoryInformation[petType],1)
+                    --PUT CODE TO REMOVE YOUR INVENTORY ITEMS HERE    TriggerServerEvent("inventory:remove",petInventoryInformation[petType],1)
                     Citizen.Wait(5000)
                     DeleteEntity(petPed)
                 end
