@@ -109,7 +109,7 @@ function getPetOut()
                     petHunger=petMaxHunger
                     petThirst=petMaxThirst
                     petHealth=petMaxHealth
-                    --PUT CODE TO REMOVE YOUR INVENTORY ITEMS HERE    TriggerServerEvent("inventory:remove",petInventoryInformation[petType],1)
+                    --PUT CODE TO REMOVE YOUR INVENTORY ITEMS HERE TriggerEVent("server:removeItem",itemId,quantity)
                     Citizen.Wait(5000)
                     DeleteEntity(petPed)
                 end
