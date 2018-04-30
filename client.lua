@@ -22,6 +22,13 @@ local uiToggle = true
 --    ["Cat"]=93,
 --}
 
+local petModels = {
+	["Rottweiler"]="a_c_rottweiler",
+	["Husky"]="a_c_husky",
+	["German Shepard"]="a_c_shepherd",
+	["Golden Retriever"]="a_c_retriever"
+}
+
 RegisterNetEvent("togglePetUI")
 AddEventHandler("togglePetUI", function()
     uiToggle = not uiToggle
@@ -62,15 +69,7 @@ end)
 
 function getPetOut()
     local ped = nil
-    if(petType=="Rottwieler")then
-        ped = GetHashKey("a_c_rottweiler")
-    elseif(petType=="Husky")then
-        ped = GetHashKey("a_c_husky")
-    elseif(petType=="German Shepard")then
-        ped = GetHashKey("a_c_shepherd")
-    elseif(petType=="Golden Retriever")then
-        ped = GetHashKey("a_c_retriever")
-    end
+    ped = GetHashKey(petModels[petType])
     RequestModel(ped)
     while not HasModelLoaded(ped) do
         Citizen.Wait(1)
